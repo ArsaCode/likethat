@@ -3,3 +3,6 @@
 
 # VScode settings
 /.vscode
+
+# GeckoDriver log
+geckodriver.log

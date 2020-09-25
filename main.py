@@ -1,9 +1,19 @@
 # Chrome Bot with Selenium
+import os
+import time
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
-PATH = "/opt/WebDriver/bin/chromedriver"
-driver = webdriver.Chrome(PATH)
+class LikerBot:
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+        self.bot = webdriver.Firefox(os.environ.get("WDPATH"))
 
-driver.get("https://twitter.com")
+    def login(self):
+        bot = self.bot
+        bot.get("https://twitter.com")
+        time.sleep(5)
 
-driver.find_element(By.LINK_TEXT, "Log in").click()
+ars = LikerBot(username=os.environ.get("USERNAME"), password=os.environ.get("PASSWORD"))
+ars.login()
